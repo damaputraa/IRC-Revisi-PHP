@@ -6,12 +6,12 @@
 			<div class="header-body">
 				<div class="row align-items-center py-4">
 					<div class="col-lg-6 col-7">
-						<h6 class="h2 text-white d-inline-block mb-0">Tujuan</h6>
+						<h6 class="h2 text-white d-inline-block mb-0">Admin</h6>
 						<nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
 							<ol class="breadcrumb breadcrumb-links breadcrumb-dark">
 								<li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
 								<li class="breadcrumb-item"><a href="#">Beranda</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Tujuan</li>
+								<li class="breadcrumb-item active" aria-current="page">Admin</li>
 							</ol>
 						</nav>
 					</div>
@@ -30,7 +30,7 @@
 				<div class="card">
 					<!-- Card header -->
 					<div class="card-header border-0">
-						<h3 class="mb-0">List Tujuan</h3>
+						<h3 class="mb-0">List Admin</h3>
 						<div class="text-right">
 							<a href="#" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Data</a>
 						</div>
@@ -41,10 +41,13 @@
 							<thead class="thead-light">
 								<tr>
 									<th scope="col" class="sort" data-sort="name">No</th>
-									<th scope="col" class="sort" data-sort="budget">KD Tujuan</th>
-									<th scope="col" class="sort" data-sort="status">Dari</th>
-									<th scope="col" class="sort" data-sort="status">Tujuan</th>
-									<th scope="col" class="sort" data-sort="completion">Harga Tiket</th>
+									<th scope="col" class="sort" data-sort="budget">KD Admin</th>
+									<!-- <th scope="col" class="sort" data-sort="status">Nama</th>
+									<th scope="col" class="sort" data-sort="status">Jenis Kelamin</th> -->
+									<th scope="col" class="sort" data-sort="completion">HP</th>
+									<th scope="col" class="sort" data-sort="completion">Username</th>
+									<th scope="col" class="sort" data-sort="completion">Password</th>
+									<th scope="col" class="sort" data-sort="completion">Foto</th>
 									<!-- <th scope="col" class="sort" data-sort="completion">Harga Paket</th> -->
 									<th scope="col">Aksi</th>
 								</tr>
@@ -53,21 +56,23 @@
 								<?php
 								include '../../config/koneksi.php';
 								$no = 0;
-								$sql = mysqli_query($koneksi, "SELECT * FROM tb_tujuan");
+								$sql = mysqli_query($koneksi, "SELECT * FROM tb_admin");
 								while ($q = mysqli_fetch_array($sql)) {
 									$no++;
 
 								?>
 									<tr>
 										<td><?php echo $no; ?></td>
-										<td><?php echo $q['kd_tujuan']; ?></td>
-										<td><?php echo $q['dari']; ?></td>
-										<td><?php echo $q['tujuan']; ?></td>
-										<td>Rp <?php echo number_format($q['harga_tiket']); ?></td>
-										<!-- <td>Rp <?php echo number_format($q['harga_paket']); ?></td> -->
+										<td><?php echo $q['kd_admin']; ?></td>
+										<!-- <td><?php echo $q['nama']; ?></td>
+										<td><?php echo $q['jekel']; ?></td> -->
+										<td><?php echo $q['telp']; ?></td>
+										<td><?php echo $q['username']; ?></td>
+										<td><?php echo $q['password']; ?></td>
+										<td><?php echo $q['foto']; ?></td>
 										<td>
-											<a href="index.php?p=edit-tujuan&id=<?php echo $q['kd_tujuan']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
-											<a href="./pages/delete-tujuan.php?id=<?php echo $q['kd_tujuan']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+											<a href="index.php?p=edit-admin&id=<?php echo $q['kd_admin']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+											<a href="./pages/delete-admin.php?id=<?php echo $q['kd_admin']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 										</td>
 									</tr>
 
