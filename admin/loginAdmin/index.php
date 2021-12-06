@@ -1,4 +1,43 @@
+<?php 
+$host_db="localhost";
+$user_db="root";
+$pass_db="";
+$nama_db="irc3";
 
+$mysqli = new mysqli($host_db,$user_db,$pass_db,$nama_db);
+
+if(isset($_POST['login'])){
+	$username = $mysqli->real_escape_string($_POST['username']);
+	$password = $mysqli->real_escape_string($_POST['password']);
+
+	//cek user login 
+	$cek_login = $mysqli->query("select * from tb_admin where username='$username'");
+	$ktm_login = $cek_login->num_rows;
+	$data_login = $cek_login->fetch_assoc();
+
+	if($ktm_login>=1){
+		//login username tersedia
+		//verify password 
+		if(password_verify($password,$data_login['password'])){
+			echo "Login Berhasil";
+			//silakan buat session dan redirect disini
+			session_start();
+			$_SESSION['kd_admin']=$data_login['kd_admin'];
+
+			//redircet 
+      
+			header("location:../index.php");
+		}else{
+			echo "Login gagal, Silakan coba lagi!";
+		}
+	}else{
+		//login gagal, username tidak tersedia
+		echo "Login gagal, username tidak tersedia!";
+	}
+
+	$mysqli->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,17 +63,17 @@
             <!-- <?php if (isset($error)) { ?>
               <p style="font-style: italic; color: red;">Username / Password anda salah</p>
             <?php } ?> -->
-            <form action="../../login/loginAdmin.php" method="post">
+            <form action="" method="post">
               <div class="form-floating mb-3">
-                <input class="form-control" require name="user" id="username" type="text" placeholder="Username" autocomplete="off">
+                <input class="form-control" require name="username" id="username" type="text" placeholder="Username" autocomplete="off">
                 <label for="floatingInput">Username</label>
               </div>
               <div class="form-floating mb-3">
-                <input require name="pass" id="password" class="form-control" type="password" id="floatingPassword" placeholder="Password" autocomplete="off">
+                <input require name="password" id="password" class="form-control" type="password" id="floatingPassword" placeholder="Password" autocomplete="off">
                 <label for="floatingPassword">Password</label>
 
                 <div class="d-grid my-3">
-                  <button class="btn btn-primary btn-login text-uppercase fw-bold" name="submit" type="submit" value="Login">Masuk</button>
+                  <input class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" name="login" value="Login">
                 </div>
                 <hr class="my-4">
                 <div class="d-grid">

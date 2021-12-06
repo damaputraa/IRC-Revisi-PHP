@@ -13,15 +13,19 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+ berhasilLogin();
+</script>
 <?php
 error_reporting(0);
 session_start();
-
-if (empty($_SESSION['ad'])) {
+echo "<script> berhasilLogin(); </script>";
+if (empty($_SESSION['kd_admin'])) {
 	echo "<script>
           location.replace('../index.php')</script>";
 } else {
-	$id = $_SESSION['ad'];
+	$id = $_SESSION['kd_admin'];
 }
 ?>
 <!DOCTYPE html>
@@ -36,6 +40,8 @@ if (empty($_SESSION['ad'])) {
 	<meta name="author" content="Creative Tim">
 	<title>IRC Travel</title>
 	<link rel="icon" href="../images/logo-irc.jpg">
+	<link rel="stylesheet" href="../config/fungsi.php">
+	
 	<!-- Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
 	<!-- Icons -->
@@ -55,9 +61,9 @@ if (empty($_SESSION['ad'])) {
 		<div class="scrollbar-inner">
 			<!-- Brand -->
 			<div class="sidenav-header  align-items-center">
-				<a class="navbar-brand" href="javascript:void(0)">
-					<img src="assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
-				</a>
+				<a class="navbar-brand" href="/">
+					<img src=""   class="navbar-brand-img" alt="">
+				IRC Travel</a>
 			</div>
 			<div class="navbar-inner">
 				<!-- Collapse -->
@@ -113,7 +119,7 @@ if (empty($_SESSION['ad'])) {
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="pages/register.html">
+							<a class="nav-link" href="pages/daftar.php">
 								<i class="ni ni-circle-08 text-pink"></i>
 								<span class="nav-link-text">Register</span>
 							</a>
