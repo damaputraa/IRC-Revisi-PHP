@@ -13,14 +13,12 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
- berhasilLogin();
+berhasilLogin();
 </script>
 <?php
 error_reporting(0);
 session_start();
-echo "<script> berhasilLogin(); </script>";
 if (empty($_SESSION['kd_admin'])) {
 	echo "<script>
           location.replace('../index.php')</script>";
