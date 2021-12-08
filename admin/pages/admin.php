@@ -1,3 +1,8 @@
+<link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
+
+
+<script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+
 <!-- Main content -->
 <div class="main-content" id="panel">
 	<!-- Header -->
@@ -37,7 +42,7 @@
 					</div>
 					<!-- Light table -->
 					<div class="table-responsive">
-						<table class="table align-items-center table-flush">
+						<table id="dataTable" class="table align-items-center table-flush">
 							<thead class="thead-light">
 								<tr>
 									<th scope="col" class="sort" data-sort="name">No</th>
@@ -47,7 +52,7 @@
 									<th scope="col" class="sort" data-sort="completion">HP</th>
 									<th scope="col" class="sort" data-sort="completion">Username</th>
 									<th scope="col" class="sort" data-sort="completion">Password</th>
-									<th scope="col" class="sort" data-sort="completion">Foto</th>
+									<!-- <th scope="col" class="sort" data-sort="completion">Foto</th> -->
 									<!-- <th scope="col" class="sort" data-sort="completion">Harga Paket</th> -->
 									<th scope="col">Aksi</th>
 								</tr>
@@ -69,7 +74,7 @@
 										<td><?php echo $q['telp']; ?></td>
 										<td><?php echo $q['username']; ?></td>
 										<td><?php echo $q['password']; ?></td>
-										<td><?php echo $q['foto']; ?></td>
+										<!-- <td><?php echo $q['foto']; ?></td> -->
 										<td>
 											<a href="index.php?p=edit-admin&id=<?php echo $q['kd_admin']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
 											<a href="./pages/delete-admin.php?id=<?php echo $q['kd_admin']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -112,3 +117,11 @@
 		</div>
 	</div>
 </div>
+<!-- jquery datatable -->
+<script type="text/javascript" charset="utf8" src="../DataTables/DataTables-1.11.3/js/jquery.dataTables.js"></script>
+
+<script>
+	$(document).ready(function() {
+    $('#dataTable').DataTable();
+} );
+</script>
