@@ -1,7 +1,6 @@
-<link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
-
-
-<script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+ 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 
 <!-- Main content -->
 <div class="main-content" id="panel">
@@ -118,7 +117,7 @@
 	</div>
 </div>
 <!-- jquery datatable -->
-<script type="text/javascript" charset="utf8" src="../DataTables/DataTables-1.11.3/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="DataTables/DataTables-1.11.3/js/jquery.dataTables.js"></script>
 
 <script>
 	$(document).ready(function() {
