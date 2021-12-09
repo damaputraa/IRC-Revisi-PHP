@@ -80,7 +80,7 @@ if(isset($_POST['daftar'])){
               <div class="text-center text-muted mb-4">
                 <h1>Daftar Akun IRC</h1>
               </div>
-              <form role="form" action="homeAdmin.php" method="POST">
+              <form role="form" action="" method="POST">
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">

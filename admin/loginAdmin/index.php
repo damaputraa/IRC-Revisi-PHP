@@ -19,7 +19,7 @@ if(isset($_POST['login'])){
 		//login username tersedia
 		//verify password 
 		if(password_verify($password,$data_login['password'])){
-			echo "Login Berhasil";
+      echo "<script>alert('Login Berhasil');</script>";
 			//silakan buat session dan redirect disini
 			session_start();
 			$_SESSION['kd_admin']=$data_login['kd_admin'];
@@ -28,11 +28,11 @@ if(isset($_POST['login'])){
       
 			header("location:../index.php?p=homeAdmin");
 		}else{
-			echo "Login gagal, Silakan coba lagi!";
+      echo "<script>alert('Login Gagal ! , Silahkan Coba Lagi');</script>";
 		}
 	}else{
 		//login gagal, username tidak tersedia
-		echo "Login gagal, username tidak tersedia!";
+    echo "<script>alert('Login Gagal ! , username tidak ditemukan');</script>";
 	}
 
 	$mysqli->close();

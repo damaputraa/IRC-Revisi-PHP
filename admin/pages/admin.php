@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.11.3/css/jquery.dataTables.css"/>
  
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
 
@@ -75,8 +75,8 @@
 										<td><?php echo $q['password']; ?></td>
 										<!-- <td><?php echo $q['foto']; ?></td> -->
 										<td>
-											<a href="index.php?p=edit-admin&id=<?php echo $q['kd_admin']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
-											<a href="./pages/delete-admin.php?id=<?php echo $q['kd_admin']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+											<!-- <a href="index.php?p=edit-admin&id=<?php echo $q['kd_admin']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a> -->
+											<a class="btn btn-danger" href="index.php?p=fungsi&id=<?= $q['kd_admin']; ?>"><i class="fa fa-trash" onclick="return confirm ('Apakah Ingin Hapus Data Ini ?')"></i></a>
 										</td>
 									</tr>
 
@@ -86,7 +86,7 @@
 						</table>
 					</div>
 					<!-- Card footer -->
-					<div class="card-footer py-4">
+					<!-- <div class="card-footer py-4">
 						<nav aria-label="...">
 							<ul class="pagination justify-content-end mb-0">
 								<li class="page-item disabled">
@@ -110,7 +110,7 @@
 								</li>
 							</ul>
 						</nav>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

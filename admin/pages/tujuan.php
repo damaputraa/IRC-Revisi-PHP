@@ -1,3 +1,8 @@
+
+<link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.11.3/css/jquery.dataTables.css"/>
+ 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
 <!-- Main content -->
 <div class="main-content" id="panel">
 	<!-- Header -->
@@ -37,7 +42,7 @@
 					</div>
 					<!-- Light table -->
 					<div class="table-responsive">
-						<table class="table align-items-center table-flush">
+						<table id="dataTable" class="table align-items-center table-flush w-100">
 							<thead class="thead-light">
 								<tr>
 									<th scope="col" class="sort" data-sort="name">No</th>
@@ -77,7 +82,7 @@
 						</table>
 					</div>
 					<!-- Card footer -->
-					<div class="card-footer py-4">
+					<!-- <div class="card-footer py-4">
 						<nav aria-label="...">
 							<ul class="pagination justify-content-end mb-0">
 								<li class="page-item disabled">
@@ -101,9 +106,17 @@
 								</li>
 							</ul>
 						</nav>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<!-- jquery datatable -->
+<script type="text/javascript" charset="utf8" src="DataTables/DataTables-1.11.3/js/jquery.dataTables.js"></script>
+
+<script>
+	$(document).ready(function() {
+    $('#dataTable').DataTable();
+} );
+</script>

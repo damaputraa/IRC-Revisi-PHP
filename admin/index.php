@@ -60,7 +60,7 @@ if (empty($_SESSION['kd_admin'])) {
 		<div class="scrollbar-inner">
 			<!-- Brand -->
 			<div class="sidenav-header  align-items-center">
-				<a class="navbar-brand" href="/">
+				<a class="navbar-brand" href="#">
 					<img src=""   class="navbar-brand-img" alt="">
 				IRC Travel</a>
 			</div>
@@ -404,7 +404,7 @@ if (empty($_SESSION['kd_admin'])) {
 									<span>Support</span>
 								</a> -->
 								<div class="dropdown-divider"></div>
-								<a href="../page/logout.php" class="dropdown-item">
+								<a href="../page/logout.php"  onclick="return confirm ('Apakah Ingin Keluar ?')" class="dropdown-item">
 									<i class="ni ni-user-run"></i>
 									<span>Logout</span>
 								</a>
@@ -439,7 +439,7 @@ if (empty($_SESSION['kd_admin'])) {
 	</div>
 	<!-- Argon Scripts -->
 	<!-- Core -->
-	<script src="assets/vendor/jquery/dist/jquery.min.js"></>
+	<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
 	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/vendor/js-cookie/js.cookie.js"></script>
 	<script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>

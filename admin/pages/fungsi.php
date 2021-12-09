@@ -1,7 +1,23 @@
 <?php
 include '../../config/koneksi.php';
 
-// Tabel Tujuan
+//---------------------------- Tabel Admin ------------------------- //
+
+// Untuk Hapus Data tb_tujuan
+if (isset($_GET['id'])) {
+	$kd_admin = $_GET['id'];
+
+	$queryHapusAdmin = mysqli_query($koneksi, "DELETE FROM tb_admin WHERE kd_admin = '$kd_admin'");
+
+	if ($queryHapusAdmin) {
+		header("location: index.php?p=admin");
+		echo "<script>alert('Sukses Hapus Akun!');</script>";
+	} else {
+		echo "ERROR, Tidak Berhasil Hapus Data " . mysqli_error($koneksi);
+	}
+}
+
+//---------------------------- Tabel Tujuan ------------------------- //
 // Deklarasikan Query
 $kd_tujuan		= $_POST['kd_tujuan'];
 $dari					= $_POST['dari'];
@@ -18,7 +34,7 @@ if ($_POST['tambah-tujuan']) {
 	 
 		// mengambil angka dari kode barang terbesar, menggunakan fungsi substr
 		// dan diubah ke integer dengan (int)
-		$urutan = (int) substr($kodeBarang, 3, 3);
+		$urutan = (int) substr($kodeBarang, 2, 2);
 	 
 		// bilangan yang diambil ini ditambah 1 untuk menentukan nomor urut berikutnya
 		$urutan++;
@@ -28,12 +44,12 @@ if ($_POST['tambah-tujuan']) {
 		// misalnya perintah sprintf("%03s", 15); maka akan menghasilkan '015'
 		// angka yang diambil tadi digabungkan dengan kode huruf yang kita inginkan, misalnya BRG 
 		$huruf = "TJ";
-		$kodeBarang = $huruf . sprintf("%03s", $urutan);
+		$kodeBarang = $huruf . sprintf("%02s", $urutan);
 
 	$queryTambah = mysqli_query($koneksi, "INSERT INTO tb_tujuan VALUES('$kodeBarang', '$dari', '$tujuan', '$harga_tiket', '')");
 
 	if ($queryTambah) {
-		header("location:index.php?p=tujuan");
+		header("location:../index.php?p=tujuan");
 	} else {
 		echo "ERROR, Tidak Berhasil Tambah Data " . mysqli_error($koneksi);
 	}
@@ -63,7 +79,7 @@ if (isset($_GET['id'])) {
 	}
 }
 
-// Tabel List Keberangkaktan
+//---------------------------- Tabel Keberangkatan ------------------------- //
 // Deklarasikan Query
 $kd_keberangkatan	= $_POST['kd_keberangkatan'];
 $dari					= $_POST['dari'];
