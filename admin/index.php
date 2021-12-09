@@ -21,7 +21,8 @@ error_reporting(0);
 session_start();
 if (empty($_SESSION['kd_admin'])) {
 	echo "<script>
-          location.replace('../index.php')</script>";
+	location.replace('loginAdmin/index.php')</script>";
+	echo "<script> alert('Anda Harus Login Dulu !') </script>";
 } else {
 	$id = $_SESSION['kd_admin'];
 }
@@ -93,35 +94,41 @@ if (empty($_SESSION['kd_admin'])) {
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="pages/icons.html">
-								<i class="ni ni-planet text-orange"></i>
-								<span class="nav-link-text">Icons</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="pages/map.html">
-								<i class="ni ni-pin-3 text-primary"></i>
-								<span class="nav-link-text">Google</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="pages/tables.html">
-								<i class="ni ni-bullet-list-67 text-default"></i>
-								<span class="nav-link-text">Tables</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="pages/login.html">
+							<a class="nav-link" href="index.php?p=keberangkatan">
 								<i class="ni ni-key-25 text-info"></i>
-								<span class="nav-link-text">Login</span>
+								<span class="nav-link-text">List Keberangkatan</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="pages/icons.html">
+								<i class="ni ni-archive-2 text-orange"></i>
+								<span class="nav-link-text">Tiket</span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="pages/daftar.php">
 								<i class="ni ni-circle-08 text-pink"></i>
-								<span class="nav-link-text">Register</span>
+								<span class="nav-link-text">Daftar Admin</span>
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="pages/tables.html">
+								<i class="ni ni-bullet-list-67 text-default"></i>
+								<span class="nav-link-text">Log Aktifitas</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../page/logout.php" onclick=" return confirm('Apakah Yakin Ingin Keluar ?')">
+								<i class="ni ni-bold-left text-primary"></i>
+								<span class="nav-link-text">Logout</span>
+							</a>
+						</li>
+						<!-- <li class="nav-item">
+							<a class="nav-link" href="pages/map.html">
+								<i class="ni ni-pin-3 text-primary"></i>
+								<span class="nav-link-text">Google</span>
+							</a>
+						</li> -->
 					</ul>
 					<!-- Divider -->
 					<hr class="my-3">
@@ -432,7 +439,7 @@ if (empty($_SESSION['kd_admin'])) {
 	</div>
 	<!-- Argon Scripts -->
 	<!-- Core -->
-	<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+	<script src="assets/vendor/jquery/dist/jquery.min.js"></>
 	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/vendor/js-cookie/js.cookie.js"></script>
 	<script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>

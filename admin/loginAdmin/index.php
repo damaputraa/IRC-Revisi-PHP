@@ -26,7 +26,7 @@ if(isset($_POST['login'])){
 
 			//redircet 
       
-			header("location:../index.php");
+			header("location:../index.php?p=homeAdmin");
 		}else{
 			echo "Login gagal, Silakan coba lagi!";
 		}
