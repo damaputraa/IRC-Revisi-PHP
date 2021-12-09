@@ -32,7 +32,7 @@
 					<div class="card-header border-0">
 						<h3 class="mb-0">List Tujuan</h3>
 						<div class="text-right">
-							<a href="#" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Data</a>
+							<a href="index.php?p=tambah-tujuan" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Data</a>
 						</div>
 					</div>
 					<!-- Light table -->
@@ -51,7 +51,7 @@
 							</thead>
 							<tbody class="list">
 								<?php
-								include '../../config/koneksi.php';
+								include 'koneksi.php';
 								$no = 0;
 								$sql = mysqli_query($koneksi, "SELECT * FROM tb_tujuan");
 								while ($q = mysqli_fetch_array($sql)) {
