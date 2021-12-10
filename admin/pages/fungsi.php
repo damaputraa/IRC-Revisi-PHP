@@ -1,9 +1,9 @@
 <?php
 include '../../config/koneksi.php';
 
-//---------------------------- Tabel Admin ------------------------- //
+//!---------------------------- Tabel Admin ------------------------- //
 
-// Untuk Hapus Data tb_tujuan
+// ? Untuk Hapus Data tb_tujuan
 if (isset($_GET['id'])) {
 	$kd_admin = $_GET['id'];
 
@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 	}
 }
 
-//---------------------------- Tabel Tujuan ------------------------- //
+// !---------------------------- Tabel Tujuan ------------------------- //
 // Deklarasikan Query
 $kd_tujuan		= $_POST['kd_tujuan'];
 $dari					= $_POST['dari'];
@@ -25,7 +25,7 @@ $tujuan				= $_POST['tujuan'];
 $harga_tiket	= $_POST['harga_tiket'];
 
 // --------------------------- Tambah tb_tujuan --------------------------------
-// Untuk Tambah Data tb_tujuan
+// ? Untuk Tambah Data tb_tujuan
 if ($_POST['tambah-tujuan']) {
 	// mengambil data barang dengan kode paling besar
 		$query = mysqli_query($koneksi, "SELECT max(kd_tujuan) as kodeTerbesar FROM tb_tujuan");
@@ -46,48 +46,48 @@ if ($_POST['tambah-tujuan']) {
 		$huruf = "TJ";
 		$kodeBarang = $huruf . sprintf("%02s", $urutan);
 
-	$queryTambah = mysqli_query($koneksi, "INSERT INTO tb_tujuan VALUES('$kodeBarang', '$dari', '$tujuan', '$harga_tiket', '')");
+	$queryTambahTujuan = mysqli_query($koneksi, "INSERT INTO tb_tujuan VALUES('$kodeBarang', '$dari', '$tujuan', '$harga_tiket', '')");
 
-	if ($queryTambah) {
-		header("location:../index.php?p=tujuan");
+	if ($queryTambahTujuan) {
+		header("location:index.php?p=tujuan");
 	} else {
 		echo "ERROR, Tidak Berhasil Tambah Data " . mysqli_error($koneksi);
 	}
 }
 
-// Untuk Edit Data tb_tujuan
-if (isset($_POST['edit-tb_tujuan'])) {
-	$queryEdit = mysqli_query($koneksi, "UPDATE tb_tujuan SET dari='$dari', tujuan='$tujuan', harga_tiket='$harga_tiket' WHERE kd_tujuan = '$kd_tujuan' ");
+// ? Untuk Edit Data tb_tujuan
+if (isset($_POST['edit-tujuan'])) {
+	$queryEditTujuan = mysqli_query($koneksi, "UPDATE tb_tujuan SET dari='$dari', tujuan='$tujuan', harga_tiket='$harga_tiket' WHERE kd_tujuan = '$kd_tujuan' ");
 
-	if ($queryEdit) {
-		header("location: index.php?p=tb-tb_tujuan");
+	if ($queryEditTujuan) {
+		header("location: index.php?p=tujuan");
 	} else {
 		echo "ERROR, Tidak Berhasil Edit Data " . mysqli_error($koneksi);
 	}
 }
 
-// Untuk Hapus Data tb_tujuan
+//? Untuk Hapus Data tb_tujuan
 if (isset($_GET['id'])) {
 	$kd_tujuan = $_GET['id'];
 
-	$queryHapus = mysqli_query($koneksi, "DELETE FROM tb_tujuan WHERE kd_tujuan = '$kd_tujuan'");
+	$queryHapusTujuan = mysqli_query($koneksi, "DELETE FROM tb_tujuan WHERE kd_tujuan = '$kd_tujuan'");
 
-	if ($queryHapus) {
+	if ($queryHapusTujuan) {
 		header("location: index.php?p=tb_tujuan");
 	} else {
 		echo "ERROR, Tidak Berhasil Hapus Data " . mysqli_error($koneksi);
 	}
 }
 
-//---------------------------- Tabel Keberangkatan ------------------------- //
+//!---------------------------- Tabel Keberangkatan ------------------------- //
 // Deklarasikan Query
 $kd_keberangkatan	= $_POST['kd_keberangkatan'];
 $dari					= $_POST['dari'];
 $keberangkatan					= $_POST['keberangkatan'];
 $harga_tiket				= $_POST['harga_tiket'];
 
-// --------------------------- Tambah tb_keberangkatan --------------------------------
-// Untuk Tambah Data tb_keberangkatan
+// ! --------------------------- Tambah tb_keberangkatan --------------------------------
+// ? Untuk Tambah Data tb_keberangkatan
 if ($_POST['tambah-keberangkatan']) {
 
 	$newid = "SELECT (MAX(id)+1) FROM table";
@@ -103,7 +103,7 @@ if ($_POST['tambah-keberangkatan']) {
 	}
 }
 
-// Untuk Edit Data tb_keberangkatan
+// ? Untuk Edit Data tb_keberangkatan
 if (isset($_POST['edit-tb_keberangkatan'])) {
 	$queryEdit = mysqli_query($koneksi, "UPDATE tb_keberangkatan SET dari='$dari', keberangkatan='$keberangkatan', harga_tiket='$harga_tiket' WHERE kd_keberangkatan = '$kd_keberangkatan' ");
 
@@ -114,7 +114,7 @@ if (isset($_POST['edit-tb_keberangkatan'])) {
 	}
 }
 
-// Untuk Hapus Data tb_keberangkatan
+// ? Untuk Hapus Data tb_keberangkatan
 if (isset($_GET['id'])) {
 	$kd_keberangkatan = $_GET['id'];
 

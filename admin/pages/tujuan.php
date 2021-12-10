@@ -72,7 +72,8 @@
 										<!-- <td>Rp <?php echo number_format($q['harga_paket']); ?></td> -->
 										<td>
 											<a href="index.php?p=edit-tujuan&id=<?php echo $q['kd_tujuan']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
-											<a href="./pages/delete-tujuan.php?id=<?php echo $q['kd_tujuan']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+											<a href="index.php?p=fungsi&id=<?php echo $q['kd_tujuan']; ?>" class="btn btn-danger" name="hapus-tujuan" onclick="return confirm ('Apakah Ingin Hapus Data Ini ?')"><i class="fa fa-trash"></i></a>
 										</td>
 									</tr>
 
