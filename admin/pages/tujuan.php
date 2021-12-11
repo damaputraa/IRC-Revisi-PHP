@@ -38,10 +38,11 @@
 						<h3 class="mb-0">List Tujuan</h3>
 						<div class="text-right">
 							<a href="index.php?p=tambah-tujuan" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Data</a>
+							<a href="index.php?p=cetak-tujuan" class="btn btn-danger"><i class="fa fa-file-pdf"></i> Cetak PDF</a>
 						</div>
 					</div>
 					<!-- Light table -->
-					<div class="table-responsive">
+					<div class="table-responsive w-100">
 						<table id="dataTable" class="table align-items-center table-flush w-100">
 							<thead class="thead-light">
 								<tr>
