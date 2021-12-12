@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Page content -->
 	<div class="container-fluid mt--6">
 		<div class="row">
@@ -40,6 +40,7 @@
 							<a href="index.php?p=daftar" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Data</a>
 						</div>
 					</div>
+
 					<!-- Light table -->
 					<div class="table-responsive">
 						<table id="dataTable" class="table align-items-center table-flush">
